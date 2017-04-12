@@ -1,3 +1,5 @@
+#!groovy
+
 node {
   def project = 'jenkins-163706'
   def appName = 'gceme'
