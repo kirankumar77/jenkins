@@ -1,7 +1,7 @@
 #!groovy
 
 node {
-  def project = 'local-jenkins-164508'
+  def project = 'jenkins-163706'
   def appName = 'gceme'
   def feSvcName = "${appName}-frontend"
   def imageTag = "gcr.io/${project}/${appName}:${env.BRANCH_NAME}.${env.BUILD_NUMBER}"
