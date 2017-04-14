@@ -13,8 +13,9 @@ node {
 
   stage 'Run Go tests'
   sh("sudo docker run ${imageTag} go test")
-
+  
   stage 'Push image to registry'
+  sh("gcloud auth application-default login")
   sh("gcloud docker -- push ${imageTag}")
 
   stage "Deploy Application"
