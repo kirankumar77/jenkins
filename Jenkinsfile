@@ -11,9 +11,6 @@ node {
   stage 'Build image'
   sh("sudo docker build -t ${imageTag} .")
 
-  stage 'Run Go tests'
-  sh("sudo docker run ${imageTag} go test")
-  
   stage "Deploy Application"
   switch (env.BRANCH_NAME) {
     // Roll out to canary environment
