@@ -11,7 +11,12 @@ node {
   stage 'Build image'
   sh("sudo docker build -t ${imageTag} .")
 
-  stage "Deploy Application"
+  stage 'Run Go tests'
+  sh("sudo docker run ${imageTag} go test")
+ 
+  stage 'Push image to registry'
+  sh("gcloud docker -- push ${imageTag}")stage "Deploy Application"
+
   switch (env.BRANCH_NAME) {
     // Roll out to canary environment
     case "canary":
