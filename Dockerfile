@@ -13,4 +13,4 @@
 # limitations under the License.
 
 FROM golang:1.6.3-onbuild
-MAINTAINER KIRAN
+MAINTAINER KIRAN KUMAR
